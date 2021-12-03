@@ -1,0 +1,6 @@
+#!/bin/sh
+
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+url="https://google.com/search?q=$(urlencode "$*")"
+echo "$url"
+lynx "https://google.com/search?q=$url"

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# 🦆
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]))"'
+url="https://lite.duckduckgo.com/lite?q=$(urlencode "$*")"
+echo $url
+lynx $url
+
